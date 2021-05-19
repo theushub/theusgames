@@ -1,0 +1,308 @@
+/**
+* folha de estilo do site TheusFireGamer
+*@author matheus cesarini
+*/
+
+/* Importação */ 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/************************** padronização **********************/ 
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em; /* padronização do tamanho da fonte aos diversos dispositivos */ 
+}
+
+/* o bloco de codigo abaixo adapta automaticamente o tamanho das imagens na tela */
+img { 
+    max-width: 100%; /* padronização da tela */
+    height: auto;    /* mantem a proporção da imagem */
+}
+
+/* o bloco abaixo centraliza as camadas do site */ 
+.layout {
+    /*background-color: #ffff00;*/
+    margin: 0 auto; 
+    max-width: 1140px;
+}
+
+/******************** display flax ********************/
+.flex {
+    display: flex;
+}
+
+/***************** cabeçalho ********************/
+header {
+    height: 160px;
+    /*background-color: #6b6b6b;*/
+}
+
+#logo {
+    float: left;
+}
+#logo img {
+    margin-top: 25px;
+}
+
+nav {
+    float: right;
+    margin: 110px 30px 0px 0px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    float: left;
+    padding-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+nav ul li a:hover {
+    color: #ee0000;
+}
+
+#link a {
+    text-decoration: none;
+    color: black;
+    background: #ee0000;
+    padding: 10px 40px 10px 40px;
+    font-weight: 700;
+    border-radius: 25px;
+}
+
+#link {
+    float: right; 
+    margin-top: 40px;
+}
+
+/****************************** Banner **********************************/
+main {
+    background: url(imagens/bannerG.jpg);
+    height: 400px; /*altura do banner*/
+    background-size: cover; /*ajusta a imagem ao tamanho da tela*/
+    /*tecnica usada para centralizar o conteudo*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; 
+}
+main h1 {
+    color: #000000;
+    font-size: 7em; /*criar uma sombra no texto*/
+    text-shadow: #ee0000 0.05em 0.05em 0.05em;
+}
+
+/********************* conteúdo consoles ***************************/
+#consoles {
+    padding: 50px 0px 50px 0px;
+    background: url(imagens/fundogame.jpg); 
+    background-size: cover;
+    background-attachment: fixed; /* fixar a imagem de backgraund */ 
+    text-align: center;
+}
+
+#consoles h2 {
+    color: #ffffff;
+    margin: 20px;
+    font-size: 3em;
+    text-shadow: #ee0000 0.05em 0.05em 0.05em;  /*criar uma sombra no texto*/  
+}
+
+#console1 {
+   /* background-color: deeppink; */
+    color: #ffffff;
+    flex: 33%;
+}
+
+#console2 {
+   /* background-color: deepskyblue; */
+    color: #ffffff;
+    flex: 33%;
+}
+
+#console3 {
+   /* background-color: fuchsia; */
+    color: #ffffff;
+    flex: 33%;
+}
+
+/*************************** conteúdo games ***********************************/ 
+#games {
+    padding: 50px 0px 50px 0px;
+    /* background: url(imagens/fundogame.jpg); 
+    background-size: cover;
+    background-attachment: fixed; /* fixar a imagem de backgraund */ 
+    text-align: center;
+    background-color: #6b6b6b;
+}
+
+#games h2 {
+    color: #000000;
+    padding: 0px 0px 20px 0px;
+    font-size: 3em;
+    text-shadow: #ee0000 0.05em 0.05em 0.05em;  /*criar uma sombra no texto*/ 
+
+}
+
+#game1 {
+   /* background-color: deeppink; */
+   /* color: #ffffff; */
+    flex: 33%;
+}
+
+#game2 {
+   /* background-color: deepskyblue; */
+   /* color: #ffffff; */
+    flex: 33%;
+}
+
+#game3 {
+   /* background-color: fuchsia; */
+   /* color: #ffffff; */
+    flex: 33%;
+}
+
+/*************************** conteúdo acessorios ***********************************/
+#acessorios {
+    padding: 50px 0px 50px 0px;
+    background: url(imagens/fundogame.jpg); 
+    background-size: cover;
+    background-attachment: fixed; /* fixar a imagem de backgraund */ 
+    text-align: center;
+}
+
+#acessorios h2 {
+    color: #ffffff;
+    padding-bottom: 10px;
+    font-size: 3em;
+    text-shadow: #ee0000 0.05em 0.05em 0.05em;  /*criar uma sombra no texto*/  
+}
+
+#acessorio1 {
+   /* background-color: deeppink; */
+    color: #ffffff;
+    flex: 33%;
+}
+
+#acessorio2 {
+   /* background-color: deepskyblue; */
+    color: #ffffff;
+    flex: 33%;
+}
+
+#acessorio3 {
+   /* background-color: fuchsia; */
+    color: #ffffff;
+    flex: 33%;
+}
+
+ /******************************** conteudo sobre *********************************/
+#sobre {
+    /* background-color: #ee0000; */
+     padding: 50px 0px 50px 0px;
+    /* background: url(imagens/fundo.png); */
+    /* background-size: cover; */
+    /*background-attachment: fixed; */  /* fixar a imagem de backgraund */ 
+ }
+
+ #destaque {
+    /* background-color: aquamarine; */
+     flex: 40%;
+ }
+
+ #destaque img {
+     border-radius: 50%; /*trasformar uma imagem quadrada em circulo */
+ }
+ 
+ #textoDestaque {
+    /* background-color: blueviolet; */
+     flex: 60%;
+     padding: 50px 25px 0px 25px;
+     color: #000000; 
+ }
+
+ /********************************** contato ***************************/
+ #contato {
+    background-color: #6b6b6b;
+    padding: 50px 0px 50px 0px;
+}
+
+#formulario {
+    flex: 30%;
+}
+
+#formulario h2 {
+    color: #ee0000;
+    margin-bottom: 15px;
+}
+
+#formulario input[type=text]{
+    width: 100%;                  /* pega 100% do tamnho */
+    border: 2px solid #ee0000;  /* cria uma borda */
+    padding: 10px;                /* cria um espaçamento dentro da caixa */
+    margin-bottom: 15px;          /* cria um espaçamento externo */
+    border-radius: 5px;           /* arredondar os cantos*/ 
+}
+
+#formulario textarea {
+    width: 100%;                  /* pega 100% do tamnho */
+    border: 2px solid #ee0000;  /* cria uma borda */
+    padding: 10px 0px 35px 10px;  /* cria um espaçamento dentro da caixa */
+    margin-bottom: 15px;          /* cria um espaçamento externo */
+    border-radius: 5px;           /* arredondar os cantos*/ 
+    resize: none;                 /* bloquear o redirecionamento */ 
+}
+
+#formulario input[type=submit] {
+    color: #000000;
+    font-size: 1.1em;
+    background-color: #ee0000;
+    padding: 10px 40px 10px 40px;
+    font-weight: 700;
+    border-radius: 25px;
+    cursor: pointer; /* muda o cursor deixando igual um link */
+}
+
+#fone{
+    flex: 15%;
+    margin: 50px 0px 0px 50px;
+}
+
+#fone p {
+    margin-bottom: 20px;
+}
+
+#mapa{
+    flex: 30%;
+    margin-left: 40px;
+}
+
+/***************************** conteúdo (rodapé) ******************************/
+footer {
+    background-color: #1e1e1e;
+    height: 100px;
+}   
+
+#copyright {
+    float: left;
+}  
+
+#copyright p {
+    color: #ffffff;
+    margin-top: 40px;
+  
+}
+#RedesSocial {
+    float: right;
+    margin-top: 25px;
+}
