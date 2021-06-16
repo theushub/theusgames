@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Theus Games</title>
+<link rel="icon" href="imagens/destaquesite.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<!-- layout -->
+		<div class="layout">
+			<!-- logotipo -->
+			<div id="logo">
+				<img src="imagens/logotipo.png" alt="logotipo">
+			</div>
+			<!-- menu cabeçalho -->
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="">Sobre nós</a></li>
+					<li><a href="">Conteudo</a></li>
+					<li><a href="">Fale conosco</a></li>
+				</ul>
+			</nav>
+			<div id="link">
+				<a href="main" target="_blank">Estoque</a>
+			</div>
+		</div>
+	</header>
+
+
+	<section id="formulario">
+		<div class="layout">
+			<h1>Criar novo produto</h1>
+			<!-- Criando um formulario -->
+			<form name="frmcontato" action="insert">
+				<table>
+
+					<tr>
+						<td><input type="text" name="nome" placeholder="Nome"></td>
+					</tr>
+
+					<tr>
+						<td><input type="text" name="valor" placeholder="Valor"></td>
+					</tr>
+
+					<tr>
+						<td><input type="text" name="plataforma" placeholder="Plataforma"></td>
+							
+					</tr>
+					
+					<tr>
+						<td><input type="text" name="quantidade" placeholder="Quantidade"></td>
+							
+					</tr>
+
+					<tr>
+						<td><input type="text" name="categoria" placeholder="Categoria"></td>
+							
+					</tr>
+
+				</table>
+				<!-- onclick executa uma ação ao pressionar o botão do formulario no caso executar a função validar() do 
+		documento javascript ligado a este documento -->
+				<input type="button" value="Adicionar" class="Botao1" onclick="validar()">
+			</form>
+			
+			<!-- Ligação com o documento valida.js, sempre antes do Body -->
+	<script src="valida.js"></script>
+			
+		</div>
+	</section>
+
+	<footer>
+		<div class="layout">
+			<!-- copyright -->
+			<div id="copyright">
+				<p>₢2021 - Matheus Cesarini</p>
+			</div>
+			<!-- Redes sociais -->
+			<div id="RedesSocial">
+				<a href="http://www.facebook.com" target="_blank"><img
+					src="imagens/faceboock.png" alt="Facebook"></a> <a
+					href="http://www.instagram.com" target="_blank"><img
+					src="imagens/instagram.png" alt="Instagram"></a> <a
+					href="http://www.twitter.com" target="_blank"><img
+					src="imagens/twiter.png" alt="Twitter"></a> <a
+					href="http://www.youtube.com" target="_blank"><img
+					src="imagens/youtube.png" alt="You-Tube"></a>
+
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

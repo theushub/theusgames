@@ -1,6 +1,9 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +16,7 @@ import model.JavaBeans;
 /**
  * Servlet implementation class Controller
  */
-@WebServlet(urlPatterns = { "/Controller", "/main" })
+@WebServlet(urlPatterns = { "/Controller", "/main", "/insert" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	// criar objetos para acessar a camada model
@@ -34,11 +37,53 @@ public class Controller extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 		// teste de conexão
-		dao.testarConexao();
-		
+		// dao.testarConexao();
+		// a linha abaixo cria uma variavel que recebe a requisição
+		String action = request.getServletPath();
+		System.out.println(action);
+		// encaminhamento das requisições
+		if (action.contentEquals("/main")) {
+			// encaminhar para o metodo contatos
+			produto(request, response);
+		} else if (action.equals("/insert")) {
+			// encaminhar para o metodo adicionarProduto()
+			adicionarProduto(request, response);
+		}
 	}
 
+	// selecionar produto (CRUD Read)
+	protected void produto(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// executar o metodo DAO para listar todos os produtos do banco armazenando o
+		// resultando em uma nova lista
+		ArrayList<JavaBeans> lista = dao.listarProduto();
+		// despachar a lista para o documento agenda.jsp
+				request.setAttribute("javabeans", lista);
+				RequestDispatcher rd = request.getRequestDispatcher("agenda.jsp");
+				rd.forward(request, response);
+		
+		// encaminhar ao documento agenda.jsp
+		// response.sendRedirect("agenda.jsp");
+	}
+
+	// selecionar produtos (CRUD Read)
+	protected void adicionarProduto(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// setar as variaveis javabeans
+		// request.getparameter("nome") captura o conteudo do campo nome do formulario
+		// novo
+		// javabeans,SetNome() armazena o nome do produto na variavel da classe
+		// JavaBeans
+		javabeans.setNome(request.getParameter("nome"));
+		javabeans.setValor(request.getParameter("valor"));
+		javabeans.setPlataforma(request.getParameter("plataforma"));
+		javabeans.setQuantidade(request.getParameter("quantidade"));
+		javabeans.setCategoria(request.getParameter("categoria"));
+		// a linha abaixo executa o metodo inserirContato() da classe DAO, passando o
+		// objeto JavaBeans como parametro (passo 6)
+		dao.inserirProduto(javabeans);
+		// encaminhar ao documento agenda.jsp (passo 10)
+		response.sendRedirect("main");
+	}
 }
